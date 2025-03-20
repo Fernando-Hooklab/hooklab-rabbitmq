@@ -3,6 +3,8 @@ services:
     image: "rabbitmq:3-management"
     container_name: rabbitmq
     hostname: rabbitmq
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "15672:15672"
       - "5672:5672"
