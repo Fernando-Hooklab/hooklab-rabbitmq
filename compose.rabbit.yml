@@ -3,8 +3,6 @@ services:
     image: "rabbitmq:3-management"
     container_name: rabbitmq
     hostname: rabbitmq
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     ports:
       - "15672:15672"
       - "5672:5672"
@@ -31,7 +29,3 @@ volumes:
 networks:
   app-network:
     external: true
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.1.0/24
